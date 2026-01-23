@@ -34,7 +34,7 @@ To deploy this project run
 ```
 
 
-## Endpoint, You can test by Bruno or Postman
+## Endpoint, You can test by Bruno 
 
 
 To run tests, run the following command
