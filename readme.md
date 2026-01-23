@@ -12,6 +12,7 @@ Simple CRUD(Get user, Update user, Delete user by status) using Gorm
 To deploy this project run
 
 ```bash
+  cd simple_golang_api_with_authentication and in terminal "go mod tidy"
   Create database simple_golang_api_with_authentication
 
   fill .env like a sample
