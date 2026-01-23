@@ -1,0 +1,28 @@
+# ENV
+.env
+.env.*
+
+# Go build
+*.exe
+*.out
+*.bin
+*.test
+
+# Go cache
+/go/pkg/
+/go/bin/
+
+# Logs
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test
+coverage.out
