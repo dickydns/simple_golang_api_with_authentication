@@ -282,7 +282,7 @@ To run tests, run the following command
   "environments": [],
   "brunoConfig": {
     "version": "1",
-    "name": "Belajar GO",
+    "name": "API GO",
     "type": "collection",
     "ignore": [
       "node_modules",
