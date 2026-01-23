@@ -12,7 +12,7 @@ Simple CRUD(Get user, Update user, Delete user by status) using Gorm
 To deploy this project run
 
 ```bash
-  Create database belajar_go
+  Create database simple_golang_api_with_authentication
 
   fill .env like a sample
     JWT_SECRET=
@@ -24,10 +24,10 @@ To deploy this project run
     DATABASE_USER=root
     DATABASE_PASSWORD=
     DATABASE_ADDRESS=127.0.0.1:3306
-    DATABASE_NAME=belajar_go
+    DATABASE_NAME=simple_golang_api_with_authentication
 
   Migrate database 
-  migrate -database "mysql://root:password@tcp(localhost:3306)/belajar_go" -path migrations up
+  migrate -database "mysql://root:password@tcp(localhost:3306)/simple_golang_api_with_authentication" -path migrations up
 
   after database migrating you can run 
   go run main.go

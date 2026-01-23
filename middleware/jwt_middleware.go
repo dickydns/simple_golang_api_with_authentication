@@ -1,9 +1,9 @@
 package middleware
 
 import (
-	"belajar_go/utils"
 	"net/http"
 	"os"
+	"simple_golang_api_with_authentication/utils"
 	"strings"
 
 	"github.com/gin-gonic/gin"

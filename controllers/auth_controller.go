@@ -1,11 +1,11 @@
 package controllers
 
 import (
-	"belajar_go/config"
-	"belajar_go/models"
-	"belajar_go/utils"
 	"net/http"
 	"os"
+	"simple_golang_api_with_authentication/config"
+	"simple_golang_api_with_authentication/models"
+	"simple_golang_api_with_authentication/utils"
 
 	"github.com/gin-gonic/gin"
 	"github.com/golang-jwt/jwt/v5"

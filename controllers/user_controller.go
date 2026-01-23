@@ -1,9 +1,9 @@
 package controllers
 
 import (
-	"belajar_go/config"
-	"belajar_go/models"
 	"net/http"
+	"simple_golang_api_with_authentication/config"
+	"simple_golang_api_with_authentication/models"
 
 	"github.com/gin-gonic/gin"
 	"golang.org/x/crypto/bcrypt"

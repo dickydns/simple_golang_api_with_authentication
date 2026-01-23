@@ -1,10 +1,10 @@
 package main
 
 import (
-	"belajar_go/config"
-	"belajar_go/routes"
 	"fmt"
 	"log"
+	"simple_golang_api_with_authentication/config"
+	"simple_golang_api_with_authentication/routes"
 
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"

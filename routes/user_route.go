@@ -1,7 +1,7 @@
 package routes
 
 import (
-	"belajar_go/controllers"
+	"simple_golang_api_with_authentication/controllers"
 
 	"github.com/gin-gonic/gin"
 )

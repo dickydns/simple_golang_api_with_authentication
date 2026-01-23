@@ -1,4 +1,4 @@
-module belajar_go
+module simple_golang_api_with_authentication
 
 go 1.25.5
 
