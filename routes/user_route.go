@@ -13,7 +13,7 @@ func UserRoute(r *gin.Engine) {
 		authentication.POST("/register", controllers.RegisterUser)
 		authentication.POST("/refresh", controllers.RefreshToken)
 	}
-
+	// , middleware.JWTAuth()
 	user := r.Group("/user")
 	{
 		user.GET("", controllers.GetUser)

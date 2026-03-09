@@ -26,8 +26,8 @@ func main() {
 	}
 
 	r := gin.Default()
-
+	r.SetTrustedProxies(nil)
 	routes.UserRoute(r)
 	//runnig router
-	r.Run()
+	r.Run(":3100")
 }

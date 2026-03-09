@@ -26,3 +26,11 @@ Thumbs.db
 
 # Test
 coverage.out
+
+# Node
+node_modules/
+
+# Playwright results
+playwright-report/
+test-results/
+.env
