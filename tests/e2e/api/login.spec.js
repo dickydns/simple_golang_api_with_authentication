@@ -11,7 +11,7 @@ test('login testes', async ({ request }) => {
   const response = await request.post('/auth/login', {
     data: {
       email: email,
-      password: password
+      password: password 
     }
   });
 
