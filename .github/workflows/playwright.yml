@@ -51,7 +51,20 @@ jobs:
         ./app-server > server.log 2>&1 &
         echo $! > server.pid
         echo "Server PID: $(cat server.pid)"
-
+    - name: debug on failure
+      if: failure()
+      run: |
+        echo "=== server.log ==="
+        cat server.log || echo "(no log)"
+        echo ""
+        echo "=== .env file (tanpa value sensitif) ==="
+        cat .env | sed 's/=.*/=***/' || echo "(no .env)"
+        echo ""
+        echo "=== MySQL connection test ==="
+        mysqladmin ping -h 127.0.0.1 -u ${{ secrets.DATABASE_USER }} -p${{ secrets.DATABASE_PASSWORD }} || echo "MySQL tidak bisa diakses"
+        echo ""
+        echo "=== Port yang aktif ==="
+        ss -tlnp
     # ✅ Ganti sleep 10 dengan wait aktif — lebih reliable
     - name: wait for server to be ready
       run: |
