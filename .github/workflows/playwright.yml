@@ -27,34 +27,33 @@ jobs:
     - name: install go dependencies
       run: go mod download
 
+    - name: create .env file
+      run: |
+        echo "JWT_SECRET=${{ secrets.JWT_SECRET }}" >> .env
+        echo "JWT_REFRESH_SECRET=${{ secrets.JWT_REFRESH_SECRET }}" >> .env
+        echo "JWT_ACCESS_EXPIRE_MINUTES=${{ secrets.JWT_ACCESS_EXPIRE_MINUTES }}" >> .env
+        echo "JWT_REFRESH_EXPIRE_DAYS=${{ secrets.JWT_REFRESH_EXPIRE_DAYS }}" >> .env
+        echo "DATABASE_USER=${{ secrets.DATABASE_USER }}" >> .env
+        echo "DATABASE_PASSWORD=${{ secrets.DATABASE_PASSWORD }}" >> .env
+        echo "DATABASE_ADDRESS=${{ secrets.DATABASE_ADDRESS }}" >> .env
+        echo "DATABASE_NAME=${{ secrets.DATABASE_NAME }}" >> .env
+
     - name: install playwright dependencies
       run: |
         cd tests/e2e
         npm ci
         npx playwright install --with-deps
 
-    # start server
     - name: start go server
       run: |
         go run main.go > server.log 2>&1 &
         sleep 10
-      env:
-        JWT_SECRET: ${{ secrets.JWT_SECRET }}
-        JWT_REFRESH_SECRET: ${{ secrets.JWT_REFRESH_SECRET }}
-        JWT_ACCESS_EXPIRE_MINUTES: ${{ secrets.JWT_ACCESS_EXPIRE_MINUTES }}
-        JWT_REFRESH_EXPIRE_DAYS: ${{ secrets.JWT_REFRESH_EXPIRE_DAYS }}
-        DATABASE_USER: ${{ secrets.DATABASE_USER }}
-        DATABASE_PASSWORD: ${{ secrets.DATABASE_PASSWORD }}
-        DATABASE_ADDRESS: ${{ secrets.DATABASE_ADDRESS }}
-        DATABASE_NAME: ${{ secrets.DATABASE_NAME }}
 
-    # check server status
     - name: check server
       run: |
         curl http://127.0.0.1:3100 || true
         cat server.log || true
 
-    # run tests
     - name: run playwright tests
       run: |
         cd tests/e2e
