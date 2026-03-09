@@ -11,10 +11,5 @@ export default defineConfig({
     headless: true
   },
 
-  webServer: {
-    command: 'go run main.go',
-    port: 3100,
-    timeout: 20000
-  }
 
 });
