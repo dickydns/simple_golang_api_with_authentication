@@ -46,8 +46,6 @@ jobs:
         DATABASE_PASSWORD: ${{ secrets.DATABASE_PASSWORD }}
         DATABASE_ADDRESS: ${{ secrets.DATABASE_ADDRESS }}
         DATABASE_NAME: ${{ secrets.DATABASE_NAME }}
-      run: |
-        curl http://127.0.0.1:3100 || true
 
     - name: run playwright tests
       run: |
