@@ -40,7 +40,7 @@ jobs:
 
     - name: run playwright tests
       run: |
-        cd tests
+        cd tests/e2e
         npx playwright test
 
     - name: upload playwright report
