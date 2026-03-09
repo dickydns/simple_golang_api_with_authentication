@@ -4,7 +4,7 @@ test('login testes', async ({ request }) => {
   const response = await request.post('http://127.0.0.1:3100/auth/login', {
     data: {
       email: 'dickydraknes@gmail.com',
-      password: 'asder122'
+      password: 'asder122s'
     }
   });
 
