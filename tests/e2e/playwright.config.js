@@ -11,11 +11,4 @@ export default defineConfig({
     headless: true
   },
 
-  projects: [
-    {
-      name: 'api',
-      testDir: './api'
-    }
-  ]
-
 });

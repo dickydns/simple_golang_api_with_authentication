@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test('login testes', async ({ request }) => {
-  const response = await request.post('/api/login', {
+  const response = await request.post('/login', {
     data: {
       email: 'dickydraknes@gmail.com',
       password: 'asder122'
