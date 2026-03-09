@@ -8,7 +8,7 @@ test('login testes', async ({ request }) => {
   expect(email).toBeTruthy();
   expect(password).toBeTruthy();
 
-  const response = await request.post('http://127.0.0.1:3100/auth/login', {
+  const response = await request.post('/auth/login', {
     data: {
       email: email,
       password: password
