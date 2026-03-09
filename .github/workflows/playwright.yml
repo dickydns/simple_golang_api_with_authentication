@@ -52,6 +52,11 @@ jobs:
         cd tests/e2e
         npx playwright test
 
+    - name: show files
+      run: ls -R
+
+    - name: check server
+      run: curl http://127.0.0.1:3100 || true
     - name: upload playwright report
       uses: actions/upload-artifact@v4
       if: always()
