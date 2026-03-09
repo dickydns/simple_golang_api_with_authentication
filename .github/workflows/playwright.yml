@@ -37,8 +37,15 @@ jobs:
       run: |
         go run main.go &
         sleep 10
-      env: JWT_SECRET:${{ secrets.JWT_SECRET }} JWT_REFRESH_SECRET:${{ secrets.JWT_REFRESH_SECRET }} JWT_ACCESS_EXPIRE_MINUTES:${{ secrets.JWT_ACCESS_EXPIRE_MINUTES }} JWT_REFRESH_EXPIRE_DAYS:${{ secrets.JWT_REFRESH_EXPIRE_DAYS }} DATABASE_USER:${{ secrets.DATABASE_USER }} DATABASE_PASSWORD:${{ secrets.DATABASE_PASSWORD }} DATABASE_ADDRESS:${{ secrets.DATABASE_ADDRESS }} DATABASE_NAME:${{ secrets.DATABASE_NAME }}
-    - name: check server
+      env:
+        JWT_SECRET: ${{ secrets.JWT_SECRET }}
+        JWT_REFRESH_SECRET: ${{ secrets.JWT_REFRESH_SECRET }}
+        JWT_ACCESS_EXPIRE_MINUTES: ${{ secrets.JWT_ACCESS_EXPIRE_MINUTES }}
+        JWT_REFRESH_EXPIRE_DAYS: ${{ secrets.JWT_REFRESH_EXPIRE_DAYS }}
+        DATABASE_USER: ${{ secrets.DATABASE_USER }}
+        DATABASE_PASSWORD: ${{ secrets.DATABASE_PASSWORD }}
+        DATABASE_ADDRESS: ${{ secrets.DATABASE_ADDRESS }}
+        DATABASE_NAME: ${{ secrets.DATABASE_NAME }}
       run: |
         curl http://127.0.0.1:3100 || true
 
