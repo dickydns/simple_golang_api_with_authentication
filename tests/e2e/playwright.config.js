@@ -4,7 +4,6 @@ import path from 'path';
 
 // Load .env dari root project, bukan dari folder tests/e2e
 dotenv.config({ path: path.resolve(__dirname, '../../.env') });
-import { defineConfig } from '@playwright/test';
 
 export default defineConfig({
 
