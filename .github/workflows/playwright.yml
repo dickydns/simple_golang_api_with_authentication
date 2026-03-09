@@ -30,12 +30,13 @@ jobs:
     - name: install playwright dependencies
       run: |
         cd tests/e2e
-        npm install
+        npm ci
         npx playwright install --with-deps
 
+    # start server
     - name: start go server
       run: |
-        go run main.go &
+        go run main.go > server.log 2>&1 &
         sleep 10
       env:
         JWT_SECRET: ${{ secrets.JWT_SECRET }}
@@ -47,19 +48,21 @@ jobs:
         DATABASE_ADDRESS: ${{ secrets.DATABASE_ADDRESS }}
         DATABASE_NAME: ${{ secrets.DATABASE_NAME }}
 
+    # check server status
+    - name: check server
+      run: |
+        curl http://127.0.0.1:3100 || true
+        cat server.log || true
+
+    # run tests
     - name: run playwright tests
       run: |
         cd tests/e2e
         npx playwright test
 
-    - name: show files
-      run: ls -R
-
-    - name: check server
-      run: curl http://127.0.0.1:3100 || true
     - name: upload playwright report
       uses: actions/upload-artifact@v4
       if: always()
       with:
         name: playwright-report
-        path: tests/playwright-report
+        path: tests/e2e/playwright-report
