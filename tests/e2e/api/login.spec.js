@@ -1,4 +1,4 @@
-import 'dotenv/config';
+
 import { test, expect } from '@playwright/test';
 
 test('login testes', async ({ request }) => {
@@ -14,10 +14,6 @@ test('login testes', async ({ request }) => {
       password: password
     }
   });
-
-
-  
-
 
   expect(response.status()).toBe(200);
   const body = await response.json();
