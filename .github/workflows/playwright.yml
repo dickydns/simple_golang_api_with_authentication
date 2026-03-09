@@ -69,20 +69,17 @@ jobs:
     - name: wait for server to be ready
       run: |
         echo "Waiting for server on port 3100..."
-        for i in $(seq 1 50); do
-          if curl -sf http://127.0.0.1:3100/health 2>/dev/null || \
-             curl -sf http://127.0.0.1:3100 2>/dev/null; then
+        for i in $(seq 1 60); do
+          if curl -s http://127.0.0.1:3100 > /dev/null 2>&1; then
             echo "✅ Server is up after ${i}s"
             exit 0
           fi
-          echo "Attempt $i/50 — server not ready yet..."
-          sleep 1
+          echo "Attempt $i/60 — server not ready yet..."
+          sleep 2
         done
-        echo "❌ Server failed to start after 30 seconds"
-        echo "=== server.log ==="
+        echo "❌ Server failed to start"
         cat server.log
         exit 1
-
     - name: check server status
       if: always()
       run: |
