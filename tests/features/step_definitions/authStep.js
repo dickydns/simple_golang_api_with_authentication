@@ -1,15 +1,16 @@
-const { Given, Then, When, Before  } = require('@cucumber/cucumber');
+const { Given, Then, When } = require('@cucumber/cucumber');
 const assert = require("assert");
 
 
 Given('API Data Payload', async function(){
     this.payload = {
-        email:process.env.TEST_USER_EMAIL,
-        password:process.env.TEST_USER_PASSWORD
+        email: process.env.TEST_USER_EMAIL,
+        password: process.env.TEST_USER_PASSWORD
     };
 })
 
 When('user login dengan email user tester', async function(){
+    console.log("nv",process.env.TEST_USER_EMAIL)
     if (!this.apiContext) {
         throw new Error("apiContext is null - Before hook tidak berjalan");
     }

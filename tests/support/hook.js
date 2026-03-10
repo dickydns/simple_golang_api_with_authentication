@@ -1,3 +1,4 @@
+require('dotenv').config({ path: '../.env' });
 const { Before, After } = require('@cucumber/cucumber');
 
 Before(async function () {
