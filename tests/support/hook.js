@@ -6,5 +6,5 @@ Before(async function () {
 });
 
 After(async function () {
-  await this.apiContext?.dispose();
+  this.apiContext = null;
 });

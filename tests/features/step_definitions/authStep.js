@@ -1,31 +1,33 @@
 const { Given, Then, When } = require('@cucumber/cucumber');
-const assert = require("assert");
-
+const {expect} = require('chai');
 
 Given('API Data Payload', async function(){
     this.payload = {
-        email: process.env.TEST_USER_EMAIL,
-        password: process.env.TEST_USER_PASSWORD
+        email:process.env.TEST_USER_EMAIL,
+        password:process.env.TEST_USER_PASSWORD
     };
+   
 })
 
 When('user login dengan email user tester', async function(){
-    console.log("nv",process.env.TEST_USER_EMAIL)
     if (!this.apiContext) {
         throw new Error("apiContext is null - Before hook tidak berjalan");
     }
-
-    this.response = await this.apiContext.post('auth/login', {
-        data: this.payload
-    });
-
-    this.body = await this.response.json()
+    this.response = await this.apiContext.post("auth/login", this.payload);
+    this.body = this.response.data;
 })
 
 Then('response status harus {int}', function (status){
-    assert.strictEqual(this.response.status(), status);
+    expect(this.response.status).to.equal(200)
 })
 
 Then('response memiliki token', function(){
-    assert.ok(this.body.token)
+    expect(this.response.data.token).to.not.be.empty;
+})
+
+
+Then('response memiliki isi token', function(){
+    const token = this.response.data.token
+    console.log("Token", token)
+    expect(this.response.data.token).to.not.be.empty;
 })

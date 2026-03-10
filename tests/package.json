@@ -12,8 +12,8 @@
   "type": "commonjs",
   "dependencies": {
     "@cucumber/cucumber": "^12.7.0",
-    "@playwright/test": "^1.58.2",
     "axios": "^1.13.6",
+    "chai": "^6.2.2",
     "dotenv": "^17.3.1"
   }
 }

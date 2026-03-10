@@ -1,5 +1,5 @@
 const { setWorldConstructor } = require("@cucumber/cucumber");
-const { request } = require("@playwright/test");
+const axios = require("axios");
 
 class CustomWorld {
   constructor() {
@@ -7,10 +7,11 @@ class CustomWorld {
     this.payload = null;
     this.response = null;
     this.body = null;
+    this.token=null;
   }
 
   async init() {
-    this.apiContext = await request.newContext({
+    this.apiContext = await axios.create({
       baseURL: "http://localhost:3100",
     });
   }
