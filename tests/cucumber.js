@@ -7,6 +7,11 @@ module.exports = {
       'features/step_definitions/**/*.js',
     ],
     paths: ['features/**/**/*.feature'],
-    format: ['pretty'] 
+    format: [
+      'pretty',                           
+      'html:reports/report.html',       
+      'json:reports/report.json',        
+      'junit:reports/report.xml',     
+    ]
   }
 }

@@ -1,0 +1,261 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "login-api;user-berhasil-login",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "User berhasil login",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 958700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "API Data Payload",
+            "match": {
+              "location": "features\\step_definitions\\auth.js:4"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 192999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "user login dengan email user tester",
+            "match": {
+              "location": "features\\step_definitions\\auth.js:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 254819499
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 6,
+            "name": "response status harus 200",
+            "match": {
+              "location": "features\\step_definitions\\auth.js:21"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 734799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "response memiliki token",
+            "match": {
+              "location": "features\\step_definitions\\auth.js:25"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 335900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "response memiliki isi token",
+            "match": {
+              "location": "features\\step_definitions\\auth.js:30"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 370199
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 112100
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "login-api",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Login API",
+    "tags": [],
+    "uri": "features\\auth\\login.feature"
+  },
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "user-api;mengambil-data-user",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "Mengambil data user",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 168999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 4,
+            "name": "ambil data user",
+            "match": {
+              "location": "features\\step_definitions\\userGet.js:4"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 15222200
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 5,
+            "name": "status harus 200",
+            "match": {
+              "location": "features\\step_definitions\\userGet.js:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 159100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 6,
+            "name": "response memiliki user list",
+            "match": {
+              "location": "features\\step_definitions\\userGet.js:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 270700
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 72499
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "user-api;register-data-user",
+        "keyword": "Scenario",
+        "line": 8,
+        "name": "Register data user",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 128699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 9,
+            "name": "payload data user",
+            "match": {
+              "location": "features\\step_definitions\\userRegister.js:4"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 155900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 10,
+            "name": "membuat data user",
+            "match": {
+              "location": "features\\step_definitions\\userRegister.js:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 64323100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 11,
+            "name": "status create harus 201",
+            "match": {
+              "location": "features\\step_definitions\\userRegister.js:20"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 161000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "response data user",
+            "match": {
+              "location": "features\\step_definitions\\userRegister.js:24"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 138400
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 41099
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "user-api",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "User Api",
+    "tags": [],
+    "uri": "features\\user\\user.feature"
+  }
+]
