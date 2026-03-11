@@ -1,18 +1,18 @@
 <?xml version="1.0"?>
-<testsuite name="Cucumber" time="0.362" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-03-11T07:04:27.878Z">
-  <testcase classname="Login API" name="User berhasil login" time="0.264">
+<testsuite name="Cucumber" time="0.465" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-03-11T07:27:26.713Z">
+  <testcase classname="Login API" name="User berhasil login" time="0.355">
     <system-out><![CDATA[Given API Data Payload......................................................passed
 When user login dengan email user tester....................................passed
 Then response status harus 200..............................................passed
 And response memiliki token.................................................passed
 And response memiliki isi token.............................................passed]]></system-out>
   </testcase>
-  <testcase classname="User Api" name="Mengambil data user" time="0.018">
+  <testcase classname="User Api" name="Mengambil data user" time="0.007">
     <system-out><![CDATA[When ambil data user........................................................passed
 Then status harus 200.......................................................passed
 And response memiliki user list.............................................passed]]></system-out>
   </testcase>
-  <testcase classname="User Api" name="Register data user" time="0.068">
+  <testcase classname="User Api" name="Register data user" time="0.087">
     <system-out><![CDATA[Given payload data user.....................................................passed
 When membuat data user......................................................passed
 Then status create harus 201................................................passed

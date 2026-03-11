@@ -6,5 +6,9 @@ Before(async function () {
 });
 
 After(async function () {
+  this.payload = null;
+  this.response = null;
+  this.body = null;
+  this.token = null;
   this.apiContext = null;
 });
