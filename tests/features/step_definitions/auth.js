@@ -15,6 +15,7 @@ When('user login dengan email user tester', async function(){
     }
     this.response = await this.apiContext.post("auth/login", this.payload);
     this.body = this.response.data;
+    this.token= this.response.data.token
 })
 
 Then('response status harus {int}', function (status){

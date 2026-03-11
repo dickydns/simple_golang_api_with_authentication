@@ -43,7 +43,7 @@ jobs:
       run: |
         cd tests/
         npm ci
-        npm install @playwright/test @cucumber/cucumber axios --with-deps
+        npm install  @cucumber/cucumber axios chai --with-deps
 
     - name: build go binary
       run: go build -o ./app-server main.go
